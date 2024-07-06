@@ -12,6 +12,7 @@ import BlogScreen from "./screens/BlogScreen.jsx";
 import BlogDetailScreen from "./screens/BlogDetailScreen.jsx";
 import FaqsScreen from "./screens/FaqsScreen.jsx";
 import ComingSoonScreen from "./screens/ComingSoonScreen.jsx";
+import TermsAndConditionsScreen from "./screens/TermsAndConditionsScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
           {
             path: "/faqs",
             element: <FaqsScreen />,
+            errorElement: <ErrorPage />,
+          },
+          {
+            path: "/terms-and-conditions",
+            element: <TermsAndConditionsScreen />,
             errorElement: <ErrorPage />,
           },
         ],
