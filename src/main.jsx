@@ -16,6 +16,7 @@ import TermsAndConditionsScreen from "./screens/TermsAndConditionsScreen.jsx";
 import JobGridScreen from "./screens/JobGridScreen.jsx";
 import JobListingScreen from "./screens/JobListingScreen.jsx";
 import JobDetailScreen from "./screens/JobDetailScreen.jsx";
+import CandidateDetailScreen from "./screens/CandidateDetailScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
             path: "/job-detail",
             element: <JobDetailScreen />,
             errorElement: <ErrorPage />,
+          },
+          {
+            path: "/candidate-detail",
+            element: <CandidateDetailScreen />,
           },
         ],
       },

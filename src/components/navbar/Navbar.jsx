@@ -245,6 +245,11 @@ const Navbar = () => {
                   Candidates <i className="fas fa-chevron-down fa-xs"></i>
                 </a>
                 <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item" href="/candidate-detail">
+                      Candidates detail
+                    </a>
+                  </li>
                   <li className="dropdown-submenu">
                     <a className="dropdown-item dropdown-toggle" href="#">
                       Dashboard <i className="fas fa-chevron-right fa-xs"></i>
