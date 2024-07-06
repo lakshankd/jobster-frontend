@@ -13,6 +13,7 @@ import BlogDetailScreen from "./screens/BlogDetailScreen.jsx";
 import FaqsScreen from "./screens/FaqsScreen.jsx";
 import ComingSoonScreen from "./screens/ComingSoonScreen.jsx";
 import TermsAndConditionsScreen from "./screens/TermsAndConditionsScreen.jsx";
+import JobGridScreen from "./screens/JobGridScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
           {
             path: "/terms-and-conditions",
             element: <TermsAndConditionsScreen />,
+            errorElement: <ErrorPage />,
+          },
+          {
+            path: "/job-grid",
+            element: <JobGridScreen />,
             errorElement: <ErrorPage />,
           },
         ],
