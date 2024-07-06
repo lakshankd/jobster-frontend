@@ -11,6 +11,7 @@ import ContactUsScreen from "./screens/ContactUsScreen.jsx";
 import BlogScreen from "./screens/BlogScreen.jsx";
 import BlogDetailScreen from "./screens/BlogDetailScreen.jsx";
 import FaqsScreen from "./screens/FaqsScreen.jsx";
+import ComingSoonScreen from "./screens/ComingSoonScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "/coming-soon",
+    element: <ComingSoonScreen />,
+    errorElement: <ErrorPage />,
   },
 ]);
 

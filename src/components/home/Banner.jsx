@@ -1,11 +1,11 @@
 import React from "react";
+import BgBannerImg01 from "../../assets/images/bg/banner-01.jpg";
 
 const Banner = () => {
   return (
     <section
       className="banner bg-holder bg-overlay-black-30 text-white"
-      style={{ backgroundImage: "url(../../assets/images/bg/banner-01.jpg)" }}
-      //   style="background-image: url(images/bg/banner-01.jpg);"
+      style={{ backgroundImage: `url(${BgBannerImg01})` }}
     >
       <div className="container">
         <div className="row">
