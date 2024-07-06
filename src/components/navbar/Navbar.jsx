@@ -123,6 +123,11 @@ const Navbar = () => {
                       Job Listing
                     </a>
                   </li>
+                  <li>
+                    <a className="dropdown-item" href="/job-detail">
+                      Job Detail
+                    </a>
+                  </li>
                 </ul>
               </li>
               {/* <li className="nav-item dropdown">
