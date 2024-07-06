@@ -1,6 +1,5 @@
 import React from "react";
 import InnerBanner from "../components/common/InnerBanner";
-import AboutImg from "../assets/images/about/05.png";
 import Testimonial from "../components/about-us/Testimonial";
 import CareerOpportunities from "../components/about-us/CareerOpportunities";
 
@@ -31,11 +30,6 @@ const AboutUsScreen = () => {
                   further back in time to Albert Einstein or even further back
                   to Abraham Lincoln.
                 </p>
-                <img
-                  className="img-fluid mt-lg-4 mt-3"
-                  src={AboutImg}
-                  alt="about-section-img"
-                />
               </div>
             </div>
           </div>

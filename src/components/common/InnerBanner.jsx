@@ -4,13 +4,16 @@ const InnerBanner = ({
   primaryPageName,
   secondaryPageName,
   secondaryPageUrl,
+  textPrimaryColour = true,
 }) => {
   return (
     <div className="header-inner bg-light">
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h2 className="text-primary">{primaryPageName}</h2>
+            <h2 className={`${textPrimaryColour ? "text-primary" : ""} `}>
+              {primaryPageName}
+            </h2>
             <ol className="breadcrumb mb-0 p-0">
               <li className="breadcrumb-item">
                 <a href={secondaryPageUrl}> {secondaryPageName} </a>

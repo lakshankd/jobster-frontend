@@ -8,6 +8,8 @@ import App from "./App.jsx";
 import Root from "./routes/Root.jsx";
 import AboutUsScreen from "./screens/AboutUsScreen.jsx";
 import ContactUsScreen from "./screens/ContactUsScreen.jsx";
+import BlogScreen from "./screens/BlogScreen.jsx";
+import BlogDetailScreen from "./screens/BlogDetailScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,16 @@ const router = createBrowserRouter([
           {
             path: "/contact-us",
             element: <ContactUsScreen />,
+            errorElement: <ErrorPage />,
+          },
+          {
+            path: "/blog",
+            element: <BlogScreen />,
+            errorElement: <ErrorPage />,
+          },
+          {
+            path: "/blog-detail",
+            element: <BlogDetailScreen />,
             errorElement: <ErrorPage />,
           },
         ],
