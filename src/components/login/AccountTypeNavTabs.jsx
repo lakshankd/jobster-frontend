@@ -1,6 +1,9 @@
 import React from "react";
 
-const AccountTypeNavTabs = () => {
+const AccountTypeNavTabs = ({
+  candidateDesc = "Log in as Candidate",
+  employerDesc = "Log in as Employer",
+}) => {
   return (
     <fieldset className="border-redush-0">
       <h6 className="mb-3">Choose your Account Type</h6>
@@ -19,7 +22,7 @@ const AccountTypeNavTabs = () => {
               </div>
               <div className="ms-3">
                 <h6 className="mb-0">Candidate</h6>
-                <p className="mb-0">Log in as Candidate</p>
+                <p className="mb-0">{candidateDesc}</p>
               </div>
             </div>
           </a>
@@ -38,7 +41,7 @@ const AccountTypeNavTabs = () => {
               </div>
               <div className="ms-3">
                 <h6 className="mb-0">Employer</h6>
-                <p className="mb-0">Log in as Employer</p>
+                <p className="mb-0">{employerDesc}</p>
               </div>
             </div>
           </a>

@@ -19,6 +19,7 @@ import JobDetailScreen from "./screens/JobDetailScreen.jsx";
 import CandidateDetailScreen from "./screens/CandidateDetailScreen.jsx";
 import PostAJobScreen from "./screens/PostAJobScreen.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
+import RegisterScreen from "./screens/RegisterScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,11 @@ const router = createBrowserRouter([
           {
             path: "/login",
             element: <LoginScreen />,
+            errorElement: <ErrorPage />,
+          },
+          {
+            path: "/register",
+            element: <RegisterScreen />,
             errorElement: <ErrorPage />,
           },
         ],
