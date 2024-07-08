@@ -4,7 +4,7 @@ import MobileAppImg from "../../assets/images/mobile-app.png";
 const BrowseCenturiesOfJobs = () => {
   return (
     <section className="bg-light py-4 py-lg-0 my-4">
-      <div className="container">
+      <div className="container pt-5">
         <div className="row align-items-center">
           <div className="col-lg-6 text-center j-mt-sm-n7">
             <img

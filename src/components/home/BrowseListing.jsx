@@ -11,7 +11,7 @@ import Svg19 from "../../assets/images/svg/19.svg";
 
 const BrowseListing = () => {
   return (
-    <section className="space-ptb bg-light">
+    <section className="space-ptb">
       <div className="container">
         <div className="row">
           <div className="col-md-12">

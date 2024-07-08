@@ -5,7 +5,7 @@ import "./index.css";
 import "./assets/scss/style.scss";
 import ErrorPage from "./screens/ErrorPage.jsx";
 import App from "./App.jsx";
-import Root from "./routes/Root.jsx";
+import HomeScreen from "./screens/HomeScreen.jsx";
 import AboutUsScreen from "./screens/AboutUsScreen.jsx";
 import ContactUsScreen from "./screens/ContactUsScreen.jsx";
 import BlogScreen from "./screens/BlogScreen.jsx";
@@ -32,13 +32,13 @@ import CandidateDashboardPricingPlanScreen from "./screens/CandidateDashboardPri
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
         errorElement: <ErrorPage />,
         children: [
-          { index: true, element: <App /> },
+          { index: true, element: <HomeScreen /> },
           {
             path: "/404-error",
             element: <ErrorPage />,

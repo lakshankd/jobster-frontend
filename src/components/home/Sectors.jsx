@@ -2,7 +2,7 @@ import React from "react";
 
 const Sectors = () => {
   return (
-    <section className="space-ptb">
+    <section className="space-ptb bg-light">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8">

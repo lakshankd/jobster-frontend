@@ -2,7 +2,7 @@ import React from "react";
 
 const PlansAndPackages = () => {
   return (
-    <section className="space-ptb">
+    <section className="space-ptb bg-light">
       <div className="container">
         <div className="row align-items-center mb-4 mb-md-0">
           <div className="col-md-7">

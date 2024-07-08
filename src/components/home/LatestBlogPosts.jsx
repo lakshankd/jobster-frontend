@@ -6,7 +6,7 @@ import BlogImg05 from "../../assets/images/blog/05.jpg";
 const LatestBlogPosts = () => {
   return (
     <section className="space-ptb">
-      <div className="container">
+      <div className="container pb-5">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
             <div className="section-title center">
