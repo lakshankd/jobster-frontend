@@ -20,6 +20,14 @@ import CandidateDetailScreen from "./screens/CandidateDetailScreen.jsx";
 import PostAJobScreen from "./screens/PostAJobScreen.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
 import RegisterScreen from "./screens/RegisterScreen.jsx";
+import CandidateDashboardLayout from "./screens/CandidateDashboardLayout.jsx";
+import CandidateDashboardScreen from "./screens/CandidateDashboardScreen.jsx";
+import CandidateDashboardMyProfileScreen from "./screens/CandidateDashboardMyProfileScreen.jsx";
+import CandidateDashboardChangePasswordScreen from "./screens/CandidateDashboardChangePasswordScreen.jsx";
+import CandidateDashboardMyResumeScreen from "./screens/CandidateDashboardMyResumeScreen.jsx";
+import CandidateDashboardManageJobsScreen from "./screens/CandidateDashboardManageJobsScreen.jsx";
+import CandidateDashboardSavedJobsScreen from "./screens/CandidateDashboardSavedJobsScreen.jsx";
+import CandidateDashboardPricingPlanScreen from "./screens/CandidateDashboardPricingPlanScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -100,6 +108,44 @@ const router = createBrowserRouter([
             path: "/register",
             element: <RegisterScreen />,
             errorElement: <ErrorPage />,
+          },
+          {
+            path: "/dashboard-candidates",
+            element: <CandidateDashboardLayout />,
+            errorElement: <ErrorPage />,
+            children: [
+              { index: true, element: <CandidateDashboardScreen /> },
+              {
+                path: "my-profile",
+                element: <CandidateDashboardMyProfileScreen />,
+                errorElement: <ErrorPage />,
+              },
+              {
+                path: "change-password",
+                element: <CandidateDashboardChangePasswordScreen />,
+                errorElement: <ErrorPage />,
+              },
+              {
+                path: "my-resume",
+                element: <CandidateDashboardMyResumeScreen />,
+                errorElement: <ErrorPage />,
+              },
+              {
+                path: "manage-jobs",
+                element: <CandidateDashboardManageJobsScreen />,
+                errorElement: <ErrorPage />,
+              },
+              {
+                path: "saved-jobs",
+                element: <CandidateDashboardSavedJobsScreen />,
+                errorElement: <ErrorPage />,
+              },
+              {
+                path: "pricing",
+                element: <CandidateDashboardPricingPlanScreen />,
+                errorElement: <ErrorPage />,
+              },
+            ],
           },
         ],
       },

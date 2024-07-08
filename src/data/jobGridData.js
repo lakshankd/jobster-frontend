@@ -145,3 +145,5 @@ export const jobGridData = [
     url: "/job-detail",
   },
 ];
+
+

@@ -388,6 +388,29 @@ NOTE: This file contains all scripts for the actual Template.
 		Secondary menu
 	*************************/
 
+  // POTENZA.secondarymenu = function () {
+  //   $(".secondary-menu ul li a[href^='#']").on("click", function (e) {
+  //     // prevent default anchor click behavior
+  //     e.preventDefault();
+
+  //     // store hash
+  //     var hash = this.hash;
+
+  //     // animate
+  //     $("html, body").animate(
+  //       {
+  //         scrollTop: $(hash).offset().top,
+  //       },
+  //       1000,
+  //       function () {
+  //         // when done, add hash to url
+  //         // (default click behaviour)
+  //         window.location.hash = hash;
+  //       }
+  //     );
+  //   });
+  // };
+
   POTENZA.secondarymenu = function () {
     $(".secondary-menu ul li a[href^='#']").on("click", function (e) {
       // prevent default anchor click behavior
@@ -396,18 +419,23 @@ NOTE: This file contains all scripts for the actual Template.
       // store hash
       var hash = this.hash;
 
-      // animate
-      $("html, body").animate(
-        {
-          scrollTop: $(hash).offset().top,
-        },
-        1000,
-        function () {
-          // when done, add hash to url
-          // (default click behaviour)
-          window.location.hash = hash;
-        }
-      );
+      // check if element exists
+      if ($(hash).length) {
+        // animate
+        $("html, body").animate(
+          {
+            scrollTop: $(hash).offset().top,
+          },
+          1000,
+          function () {
+            // when done, add hash to url
+            // (default click behaviour)
+            window.location.hash = hash;
+          }
+        );
+      } else {
+        console.warn("Element not found for hash:", hash);
+      }
     });
   };
 

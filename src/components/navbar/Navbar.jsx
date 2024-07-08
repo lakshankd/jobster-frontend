@@ -266,7 +266,7 @@ const Navbar = () => {
                       <li>
                         <a
                           className="dropdown-item"
-                          href="/dashboard-candidates-my-profile"
+                          href="/dashboard-candidates/my-profile"
                         >
                           Profile
                         </a>
@@ -274,7 +274,7 @@ const Navbar = () => {
                       <li>
                         <a
                           className="dropdown-item"
-                          href="/dashboard-candidates-change-password"
+                          href="/dashboard-candidates/change-password"
                         >
                           Change Password{" "}
                         </a>
@@ -282,7 +282,7 @@ const Navbar = () => {
                       <li>
                         <a
                           className="dropdown-item"
-                          href="/dashboard-candidates-my-resume"
+                          href="/dashboard-candidates/my-resume"
                         >
                           My Resume
                         </a>
@@ -290,7 +290,7 @@ const Navbar = () => {
                       <li>
                         <a
                           className="dropdown-item"
-                          href="/dashboard-candidates-manage-jobs"
+                          href="/dashboard-candidates/manage-jobs"
                         >
                           Manage Jobs
                         </a>
@@ -298,7 +298,7 @@ const Navbar = () => {
                       <li>
                         <a
                           className="dropdown-item"
-                          href="/dashboard-candidates-saved-jobs"
+                          href="/dashboard-candidates/saved-jobs"
                         >
                           Saved Jobs
                         </a>
@@ -306,7 +306,7 @@ const Navbar = () => {
                       <li>
                         <a
                           className="dropdown-item"
-                          href="/dashboard-candidates-pricing"
+                          href="/dashboard-candidates/pricing"
                         >
                           Pricing
                         </a>
