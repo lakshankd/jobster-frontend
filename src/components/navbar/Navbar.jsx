@@ -1,8 +1,15 @@
 import React from "react";
 import Logo from "../../assets/images/logo.svg";
 import SignInModal from "./SignInModal";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
+  const isActiveMainLink = (paths) => {
+    return paths.some((path) => location.pathname === path);
+  };
+
   return (
     <>
       <header className="header header-default">
@@ -24,30 +31,25 @@ const Navbar = () => {
             </a>
             <div className="navbar-collapse collapse justify-content-start">
               <ul className="nav navbar-nav">
-                <li className="nav-item dropdown active">
-                  <a
-                    className="nav-link"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Home<i className="fas fa-chevron-down fa-xs"></i>
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <li className="active">
-                      <a className="dropdown-item" href="/">
-                        index Default{" "}
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li className="dropdown nav-item">
+                <li
+                  className={`dropdown nav-item ${
+                    isActiveMainLink([
+                      "/about-us",
+                      "/contact-us",
+                      "/blog",
+                      "/blog-detail",
+                      "/post-a-job",
+                      "/faqs",
+                      "/login",
+                      "/register",
+                      "/coming-soon",
+                      "/404-error",
+                      "/terms-and-conditions",
+                    ])
+                      ? "active"
+                      : ""
+                  }`}
+                >
                   <a href="#" className="nav-link" data-bs-toggle="dropdown">
                     Pages<i className="fas fa-chevron-down fa-xs"></i>
                   </a>
@@ -57,11 +59,23 @@ const Navbar = () => {
                         <div className="col-sm-4 mb-2 mb-sm-0">
                           <h6 className="mb-3 nav-title">Pages</h6>
                           <ul className="list-unstyled mt-lg-3">
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/about-us"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
                               <a href="/about-us">About</a>
                             </li>
 
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/contact-us"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
                               <a href="/contact-us">Contact Us</a>
                             </li>
                           </ul>
@@ -69,16 +83,36 @@ const Navbar = () => {
                         <div className="col-sm-4 mb-2 mb-sm-0">
                           <h6 className="mb-3 nav-title">Pages</h6>
                           <ul className="list-unstyled mt-lg-3">
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/blog" ? "active" : ""
+                              }
+                            >
                               <a href="/blog">Blog</a>
                             </li>
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/blog-detail"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
                               <a href="/blog-detail">Blog Detail</a>
                             </li>
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/post-a-job"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
                               <a href="/post-a-job">Post a Job</a>
                             </li>
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/faqs" ? "active" : ""
+                              }
+                            >
                               <a href="/faqs">Faq</a>
                             </li>
                           </ul>
@@ -86,19 +120,47 @@ const Navbar = () => {
                         <div className="col-sm-4">
                           <h6 className="mb-3 nav-title">Pages</h6>
                           <ul className="list-unstyled mt-lg-3">
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/login" ? "active" : ""
+                              }
+                            >
                               <a href="/login">Login</a>
                             </li>
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/register"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
                               <a href="/register">Register</a>
                             </li>
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/coming-soon"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
                               <a href="/coming-soon">Coming soon</a>
                             </li>
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/404-error"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
                               <a href="/404-error">404 Error</a>
                             </li>
-                            <li>
+                            <li
+                              className={
+                                location.pathname === "/terms-and-conditions"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
                               <a href="/terms-and-conditions">T&C</a>
                             </li>
                           </ul>
@@ -107,7 +169,17 @@ const Navbar = () => {
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item dropdown">
+                <li
+                  className={`nav-item dropdown ${
+                    isActiveMainLink([
+                      "/job-grid",
+                      "/job-listing",
+                      "/job-detail",
+                    ])
+                      ? "active"
+                      : ""
+                  }`}
+                >
                   <a
                     className="nav-link dropdown-toggle"
                     href="#"
@@ -118,128 +190,51 @@ const Navbar = () => {
                     Listing <i className="fas fa-chevron-down fa-xs"></i>
                   </a>
                   <ul className="dropdown-menu">
-                    <li>
+                    <li
+                      className={
+                        location.pathname === "/job-grid" ? "active" : ""
+                      }
+                    >
                       <a className="dropdown-item" href="/job-grid">
                         Job Grid
                       </a>
                     </li>
-                    <li>
+                    <li
+                      className={
+                        location.pathname === "/job-listing" ? "active" : ""
+                      }
+                    >
                       <a className="dropdown-item" href="/job-listing">
                         Job Listing
                       </a>
                     </li>
-                    <li>
+                    <li
+                      className={
+                        location.pathname === "/job-detail" ? "active" : ""
+                      }
+                    >
                       <a className="dropdown-item" href="/job-detail">
                         Job Detail
                       </a>
                     </li>
                   </ul>
                 </li>
-                {/* <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                <li
+                  className={`nav-item dropdown ${
+                    isActiveMainLink([
+                      "/candidate-detail",
+                      "/dashboard-candidates",
+                      "/dashboard-candidates/my-profile",
+                      "/dashboard-candidates/change-password",
+                      "/dashboard-candidates/my-resume",
+                      "/dashboard-candidates/manage-jobs",
+                      "/dashboard-candidates/saved-jobs",
+                      "/dashboard-candidates/pricing",
+                    ])
+                      ? "active"
+                      : ""
+                  }`}
                 >
-                  Employer <i className="fas fa-chevron-down fa-xs"></i>
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="employer-grid.html">
-                      Employer Grid
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="employer-listing.html">
-                      Employer list
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="employer-masonry.html">
-                      Employer Masonry
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="employer-detail.html">
-                      Employer detail
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="dropdown-item"
-                      href="employer-listing-map.html"
-                    >
-                      Employer Listing Map
-                    </a>
-                  </li>
-                  <li className="dropdown-submenu">
-                    <a className="dropdown-item dropdown-toggle" href="#">
-                      Dashboard <i className="fas fa-chevron-right fa-xs"></i>
-                    </a>
-                    <ul className="dropdown-menu left-side">
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href="dashboard-employer.html"
-                        >
-                          Dashboard
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href="dashboard-employer-my-profile.html"
-                        >
-                          Profile
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href="dashboard-employer-change-password.html"
-                        >
-                          Change Password{" "}
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href="dashboard-employer-manage-candidates.html"
-                        >
-                          Manage Candidates
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href="dashboard-employer-manage-jobs.html"
-                        >
-                          Manage Jobs
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href="dashboard-employer-post-new-job.html"
-                        >
-                          Post New Job
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href="dashboard-employer-pricing.html"
-                        >
-                          Pricing
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li> */}
-                <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
                     href="#"
@@ -250,7 +245,13 @@ const Navbar = () => {
                     Candidates <i className="fas fa-chevron-down fa-xs"></i>
                   </a>
                   <ul className="dropdown-menu">
-                    <li>
+                    <li
+                      className={
+                        location.pathname === "/candidate-detail"
+                          ? "active"
+                          : ""
+                      }
+                    >
                       <a className="dropdown-item" href="/candidate-detail">
                         Candidates detail
                       </a>
@@ -260,7 +261,13 @@ const Navbar = () => {
                         Dashboard <i className="fas fa-chevron-right fa-xs"></i>
                       </a>
                       <ul className="dropdown-menu left-side">
-                        <li>
+                        <li
+                          className={
+                            location.pathname === "/dashboard-candidates"
+                              ? "active"
+                              : ""
+                          }
+                        >
                           <a
                             className="dropdown-item"
                             href="/dashboard-candidates"
@@ -268,7 +275,14 @@ const Navbar = () => {
                             Dashboard
                           </a>
                         </li>
-                        <li>
+                        <li
+                          className={
+                            location.pathname ===
+                            "/dashboard-candidates/my-profile"
+                              ? "active"
+                              : ""
+                          }
+                        >
                           <a
                             className="dropdown-item"
                             href="/dashboard-candidates/my-profile"
@@ -276,7 +290,14 @@ const Navbar = () => {
                             Profile
                           </a>
                         </li>
-                        <li>
+                        <li
+                          className={
+                            location.pathname ===
+                            "/dashboard-candidates/change-password"
+                              ? "active"
+                              : ""
+                          }
+                        >
                           <a
                             className="dropdown-item"
                             href="/dashboard-candidates/change-password"
@@ -284,7 +305,14 @@ const Navbar = () => {
                             Change Password{" "}
                           </a>
                         </li>
-                        <li>
+                        <li
+                          className={
+                            location.pathname ===
+                            "/dashboard-candidates/my-resume"
+                              ? "active"
+                              : ""
+                          }
+                        >
                           <a
                             className="dropdown-item"
                             href="/dashboard-candidates/my-resume"
@@ -292,7 +320,14 @@ const Navbar = () => {
                             My Resume
                           </a>
                         </li>
-                        <li>
+                        <li
+                          className={
+                            location.pathname ===
+                            "/dashboard-candidates/manage-jobs"
+                              ? "active"
+                              : ""
+                          }
+                        >
                           <a
                             className="dropdown-item"
                             href="/dashboard-candidates/manage-jobs"
@@ -300,7 +335,14 @@ const Navbar = () => {
                             Manage Jobs
                           </a>
                         </li>
-                        <li>
+                        <li
+                          className={
+                            location.pathname ===
+                            "/dashboard-candidates/saved-jobs"
+                              ? "active"
+                              : ""
+                          }
+                        >
                           <a
                             className="dropdown-item"
                             href="/dashboard-candidates/saved-jobs"
@@ -308,7 +350,14 @@ const Navbar = () => {
                             Saved Jobs
                           </a>
                         </li>
-                        <li>
+                        <li
+                          className={
+                            location.pathname ===
+                            "/dashboard-candidates/pricing"
+                              ? "active"
+                              : ""
+                          }
+                        >
                           <a
                             className="dropdown-item"
                             href="/dashboard-candidates/pricing"
